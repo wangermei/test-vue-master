@@ -6,15 +6,15 @@
           <i class="fa fa-home"></i> 首页
         </router-link>
 
-        <router-link to="content" class="column is-one-quarter">
+        <router-link to="/content" class="column is-one-quarter">
           <i class="fa fa-search"></i>检索
         </router-link>
 
-        <router-link to="watch" class="column is-one-quarter">
+        <router-link to="/watch" class="column is-one-quarter">
           <i class="fa fa-line-chart"></i>监控
         </router-link>
 
-        <router-link to="pay" class="column is-one-quarter">
+        <router-link to="/pay" class="column is-one-quarter">
           <i class="fa fa-ruble"></i>年费
         </router-link>
       </div>

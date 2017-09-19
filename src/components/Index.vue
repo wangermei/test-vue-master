@@ -1,5 +1,20 @@
 <template>
   <div>
+
+    <div style="padding: 30px 0;">
+
+      <h1 v-if="errorMessage">{{errorMessage}}</h1>
+      <div v-else>
+        <span>{{ $store.state.count }}</span>
+        <button @click="reduce" class="btn">-</button>
+      </div>
+
+      <div>
+        {{ $store.state.add }}
+        <button @click="add" class="btn">+</button>
+      </div>
+    </div>
+
     <div class="banner">
       <img src=".././assets/content_bg.jpg"/>
     </div>
@@ -135,8 +150,8 @@
               <p>Buefy编码规范</p>
               <p>by @二妹</p>
             </div>
-            <div>
-              Bootstrap 编码规范：编写灵活、稳定、高质量的 HTML 和 CSS 代码的规范。
+            <div @click="date">
+
             </div>
           </router-link>
         </li>
@@ -147,7 +162,25 @@
 
 <script>
   export default{
-    components: {
+    name: 'index',
+    data () {
+      return {
+        errorMessage: ''
+      }
+    },
+    methods: {
+      async reduce () {
+        try {
+//          return this.$store.state.count++
+          await this.$store.dispatch('reduce')
+        } catch (err) {
+          this.errorMessage = err.message
+        }
+      },
+      add () {
+//        return this.$store.state.add++
+        this.$store.commit('add')
+      }
     }
   }
 </script>
@@ -188,5 +221,13 @@
     font-size: .8rem;
     margin-bottom: 20px;
     padding: 0 20px;
+  }
+  .btn{
+    background-color: green;
+    padding: 0 20px;
+    margin: 10px;
+    color: #ffffff;
+    border: none;
+    font-size: 2rem;
   }
 </style>
