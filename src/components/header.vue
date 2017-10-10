@@ -2,8 +2,8 @@
   <div class="header">
       <div class="columns header-nav">
         <!--<router-link to="/" class="column is-one-quarter">首页</router-link>-->
-        <router-link to="/index" class="column is-one-quarter">
-          <i class="fa fa-home"></i> 首页
+        <router-link to="/index" class="column is-one-quarter" >
+          <i class="fa fa-home"></i>首页
         </router-link>
 
         <router-link to="/content" class="column is-one-quarter">
@@ -15,9 +15,15 @@
         </router-link>
 
         <router-link to="/pay" class="column is-one-quarter">
-          <i class="fa fa-ruble"></i>年费
+          <i class="fa fa-ruble"></i>{{ $store.state.navInfo.productName }}
         </router-link>
       </div>
+
+      <!--<div class="indexContent" v-for="item in navMenu" style="border: 1px solid red; height:50px; color:red">-->
+        <!--<div class="indexContentTitle">-->
+          <!--<div>{{ item.productId }}</div>-->
+        <!--</div>-->
+      <!--</div>-->
   </div>
 </template>
 <style >
@@ -46,5 +52,16 @@
   }
 </style>
 <script>
-  export default{}
+  export default{
+    data () {
+      return {
+        navMenu: []
+      }
+    },
+    mounted () {
+      const result = this.$store.dispatch('getNavData')
+      this.navMenu = result
+      console.log(this.navMenu)
+    }
+  }
 </script>

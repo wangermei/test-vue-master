@@ -3,5 +3,12 @@
  */
 export default {
   count: 25,
-  add: 0
+  add: 0,
+  roomNum: '',
+  test: '',
+  navInfo: {
+    productId: '',
+    productName: ''
+  }
 }
+

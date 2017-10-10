@@ -16,10 +16,13 @@
 //     }
 //   }
 // }
+
 import {
-  reduce
+  reduce,
+  getNavData
 } from './data'
 
 export default {
-  reduce
+  reduce,
+  getNavData
 }

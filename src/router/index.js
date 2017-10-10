@@ -15,11 +15,11 @@ export default new Router({
       name: 'Hello',
       component: Hello,
       children: [
-        {
-          path: '',
-          name: 'Hello',
-          component: Hello
-        },
+        // {
+        //   path: '',
+        //   name: 'index',
+        //   component: Index
+        // },
         {
           path: 'index',
           name: 'index',
