@@ -2,10 +2,10 @@
   "status":"0",
   "result":[
     {
-      "productId":"10001",
-      "productName":"小米6",
-      "prodcutPrice":"2499",
-      "prodcutImg":"mi6.jpg"
+      "productId":"首页",
+      "productName":"检索",
+      "prodcutPrice":"监控",
+      "prodcutImg":"年费"
     },
     {
       "productId":"10002",
@@ -15,13 +15,13 @@
     },
     {
       "productId":"10003",
-      "productName":"小米6",
+      "productName":"小米盒子",
       "prodcutPrice":"2499",
       "prodcutImg":"mi6.jpg"
     },
     {
       "productId":"10004",
-      "productName":"小米6",
+      "productName":"小米充电宝",
       "prodcutPrice":"2499",
       "prodcutImg":"1.jpg"
     }

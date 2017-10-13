@@ -15,17 +15,40 @@
         </router-link>
 
         <router-link to="/pay" class="column is-one-quarter">
-          <i class="fa fa-ruble"></i>{{ $store.state.navInfo.productName }}
+          <i class="fa fa-ruble"></i>年费
         </router-link>
       </div>
 
-      <!--<div class="indexContent" v-for="item in navMenu" style="border: 1px solid red; height:50px; color:red">-->
-        <!--<div class="indexContentTitle">-->
-          <!--<div>{{ item.productId }}</div>-->
-        <!--</div>-->
-      <!--</div>-->
+      <div style="height: 50px;display: block; color: red; background-color: #2b542c;">
+        <div>
+          <span> {{this.$store.state.navInfo.productId}}</span>
+          <span> {{this.$store.state.navInfo.productName}}</span>
+          <span> {{this.$store.state.navInfo.prodcutPrice}}</span>
+          <span> {{this.$store.state.navInfo.prodcutImg}}</span>
+        </div>
+      </div>
   </div>
 </template>
+
+<script>
+  import { mapState } from 'Vuex'
+  export default{
+    data () {
+      return {
+      }
+    },
+    computed: mapState([
+      'navInfo'
+    ]),
+    mounted () {
+      const result = this.$store.dispatch('getNavData')
+      if (result) {
+        console.log('数据请求成功')
+      }
+    }
+  }
+</script>
+
 <style >
   .header {
     background-color: #00d1b2;
@@ -51,17 +74,3 @@
     margin-bottom: 0;
   }
 </style>
-<script>
-  export default{
-    data () {
-      return {
-        navMenu: []
-      }
-    },
-    mounted () {
-      const result = this.$store.dispatch('getNavData')
-      this.navMenu = result
-      console.log(this.navMenu)
-    }
-  }
-</script>

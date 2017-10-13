@@ -8,7 +8,9 @@ export default {
   test: '',
   navInfo: {
     productId: '',
-    productName: ''
+    productName: '',
+    prodcutPrice: '',
+    prodcutImg: ''
   }
 }
 
