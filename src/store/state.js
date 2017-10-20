@@ -6,11 +6,11 @@ export default {
   add: 0,
   roomNum: '',
   test: '',
-  navInfo: {
-    productId: '',
-    productName: '',
-    prodcutPrice: '',
-    prodcutImg: ''
-  }
+  navInfo: []
+    // productId: '',
+    // productName: '',
+    // prodcutPrice: '',
+    // prodcutImg: ''
+  // }
 }
 

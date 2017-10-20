@@ -20,8 +20,8 @@ export const getNavData = async ({ commit, state }) => {
     // console.log(resultData)
 
     if (response.data.status === '0') {
-      // console.log(response.data.result[0])
-      commit('UPDATE_NAV_INFO', response.data.result[0])
+      console.log(response.data.result)
+      commit('UPDATE_NAV_INFO', response.data.result)
     }
     return resultData
   })

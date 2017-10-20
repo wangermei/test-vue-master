@@ -17,13 +17,13 @@ export default {
   roomNum (state, roomNo) {
     state.test = roomNo
   },
-  UPDATE_NAV_INFO: (state, Info) => {
-    const data = {
-      productId: Info.productId,
-      productName: Info.productName,
-      prodcutPrice: Info.prodcutPrice,
-      prodcutImg: Info.prodcutImg
-    }
-    state.navInfo = data
+  UPDATE_NAV_INFO: (state, info) => {
+    // const data = {
+    //   productId: Info.productId,
+    //   productName: Info.productName,
+    //   prodcutPrice: Info.prodcutPrice,
+    //   prodcutImg: Info.prodcutImg
+    // }
+    state.navInfo = info
   }
 }

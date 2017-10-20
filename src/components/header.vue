@@ -19,12 +19,15 @@
         </router-link>
       </div>
 
-      <div style="height: 50px;display: block; color: red; background-color: #2b542c;">
-        <div>
-          <span> {{this.$store.state.navInfo.productId}}</span>
-          <span> {{this.$store.state.navInfo.productName}}</span>
-          <span> {{this.$store.state.navInfo.prodcutPrice}}</span>
-          <span> {{this.$store.state.navInfo.prodcutImg}}</span>
+      <div style="height: 50px;width:100%;display: block; color: red; background-color: #2b542c;">
+        <!--<div>-->
+          <!--<span> {{this.$store.state.navInfo.productId}}</span>-->
+          <!--<span> {{this.$store.state.navInfo.productName}}</span>-->
+          <!--<span> {{this.$store.state.navInfo.prodcutPrice}}</span>-->
+          <!--<span> {{this.$store.state.navInfo.prodcutImg}}</span>-->
+        <!--</div>-->
+        <div class="header-nav" v-for="item in navInfo">
+          <a>{{ item.productId}}</a>
         </div>
       </div>
   </div>
@@ -42,6 +45,7 @@
     ]),
     mounted () {
       const result = this.$store.dispatch('getNavData')
+      console.log(result)
       if (result) {
         console.log('数据请求成功')
       }
@@ -59,6 +63,7 @@
     margin: 0 auto;
   }
   .header-nav a{
+    float: left;
     color: #ffffff;
     font-size: 1.2rem;
   }
@@ -72,5 +77,8 @@
   }
   .columns:last-child{
     margin-bottom: 0;
+  }
+  span{
+    float: left;
   }
 </style>
