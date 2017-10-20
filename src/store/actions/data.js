@@ -14,16 +14,17 @@ export const reduce = async ({commit, state}) => {
   }
 }
 
-export const getNavData = async ({ commit, state }) => {
+export const getNavData = async ({ commit }) => {
   axios.get('http://localhost:8080/static/data.json').then(response => {
-    let resultData = JSON.stringify(response.data)
+    // let resultData = JSON.stringify(response.data)
     // console.log(resultData)
 
     if (response.data.status === '0') {
       console.log(response.data.result)
       commit('UPDATE_NAV_INFO', response.data.result)
+    } else {
+      throw new Error('请求失败')
     }
-    return resultData
   })
 }
 

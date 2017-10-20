@@ -1,17 +1,15 @@
 <template>
   <div>
-
-
     <div style="padding: 30px 0;">
       <h1 v-if="errorMessage">{{errorMessage}}</h1>
       <div v-else>
-        <span>{{ $store.state.count }}</span>
         <button @click="reduce" class="btn">-</button>
+        <button @click="add" class="btn">+</button>
       </div>
 
-      <div>
-        {{ $store.state.add }}
-        <button @click="add" class="btn">+</button>
+      <div style="text-align: center">
+        <span style="margin-right:40px">{{ $store.state.add }}</span>
+        <span>{{ $store.state.count }}</span>
       </div>
       <div>
         {{ $store.state.test }}

@@ -19,7 +19,8 @@
         </router-link>
       </div>
 
-      <div style="height: 50px;width:100%;display: block; color: red; background-color: #2b542c;">
+      <div v-if="errorMessage"> {{ errorMessage }} </div>
+      <div v-else style="height: 50px;width:100%;display: block; color: red; background-color: #2b542c;">
         <!--<div>-->
           <!--<span> {{this.$store.state.navInfo.productId}}</span>-->
           <!--<span> {{this.$store.state.navInfo.productName}}</span>-->
@@ -38,17 +39,27 @@
   export default{
     data () {
       return {
+        errorMessage: ''
       }
     },
     computed: mapState([
       'navInfo'
     ]),
-    mounted () {
-      const result = this.$store.dispatch('getNavData')
-      console.log(result)
-      if (result) {
-        console.log('数据请求成功')
+    methods: {
+      async getNavData () {
+        try {
+          const result = await this.$store.dispatch('getNavData')
+          if (result) {
+//          console.log('数据请求成功')
+          }
+        } catch (err) {
+          console.log(err.message)
+          this.errorMessage = err.message
+        }
       }
+    },
+    mounted () {
+      this.getNavData()
     }
   }
 </script>
@@ -78,7 +89,10 @@
   .columns:last-child{
     margin-bottom: 0;
   }
-  span{
+  .header-nav span{
     float: left;
+  }
+  .header h5{
+    color: red;
   }
 </style>
