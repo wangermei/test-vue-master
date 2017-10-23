@@ -3,8 +3,8 @@
     <div style="padding: 30px 0;">
       <h1 v-if="errorMessage">{{errorMessage}}</h1>
       <div v-else>
-        <button @click="reduce" class="btn">-</button>
         <button @click="add" class="btn">+</button>
+        <button @click="reduce" class="btn">-</button>
       </div>
 
       <div style="text-align: center">

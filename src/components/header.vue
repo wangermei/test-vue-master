@@ -19,48 +19,47 @@
         </router-link>
       </div>
 
-      <div v-if="errorMessage"> {{ errorMessage }} </div>
-      <div v-else style="height: 50px;width:100%;display: block; color: red; background-color: #2b542c;">
-        <!--<div>-->
-          <!--<span> {{this.$store.state.navInfo.productId}}</span>-->
-          <!--<span> {{this.$store.state.navInfo.productName}}</span>-->
-          <!--<span> {{this.$store.state.navInfo.prodcutPrice}}</span>-->
-          <!--<span> {{this.$store.state.navInfo.prodcutImg}}</span>-->
+      <!--<div v-if="errorMessage" style="border: 2px solid red;height: 50px;"> {{ errorMessage }} </div>-->
+
+      <!--<div v-else style="height: 50px;width:100%;display: block; color: red; background-color: #2b542c;">-->
+        <!--<div class="header-nav" v-for="item in navInfo">-->
+          <!--<nav-item v-bind:item="item">{{ item.productId}}</nav-item>-->
         <!--</div>-->
-        <div class="header-nav" v-for="item in navInfo">
-          <a>{{ item.productId}}</a>
-        </div>
-      </div>
+      <!--</div>-->
   </div>
 </template>
 
 <script>
-  import { mapState } from 'Vuex'
+//  import { mapState } from 'Vuex'
+//  import nav from '../components/nav'
   export default{
-    data () {
-      return {
-        errorMessage: ''
-      }
-    },
-    computed: mapState([
-      'navInfo'
-    ]),
-    methods: {
-      async getNavData () {
-        try {
-          const result = await this.$store.dispatch('getNavData')
-          if (result) {
-//          console.log('数据请求成功')
-          }
-        } catch (err) {
-          console.log(err.message)
-          this.errorMessage = err.message
-        }
-      }
-    },
-    mounted () {
-      this.getNavData()
-    }
+//    data () {
+//      return {
+//        errorMessage: ''
+//      }
+//    },
+//    computed: mapState([
+//      'navInfo'
+//    ]),
+//    components: {
+//      'nav-item': nav
+//    },
+//    methods: {
+//      async getNavData () {
+//        try {
+//          const result = await this.$store.dispatch('getNavData')
+//          if (result) {
+//            console.log('数据请求成功')
+//          }
+//        } catch (err) {
+//          this.errorMessage = err.message
+//          console.log(this.errorMessage)
+//        }
+//      }
+//    },
+//    mounted () {
+//      this.getNavData()
+//    }
   }
 </script>
 

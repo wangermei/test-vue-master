@@ -5,22 +5,22 @@
       "productId":"首页",
       "productName":"检索",
       "prodcutPrice":"监控",
-      "prodcutImg":"年费"
+      "prodcutImg":"note.jpg"
     },
     {
-      "productId":"检索",
+      "productId":"2",
       "productName":"小米笔记本",
       "prodcutPrice":"3999",
       "prodcutImg":"note.jpg"
     },
     {
-      "productId":"监控",
+      "productId":"3",
       "productName":"小米盒子",
       "prodcutPrice":"2499",
       "prodcutImg":"mi6.jpg"
     },
     {
-      "productId":"年费",
+      "productId":"4",
       "productName":"小米充电宝",
       "prodcutPrice":"2499",
       "prodcutImg":"1.jpg"
